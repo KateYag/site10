@@ -277,7 +277,9 @@
     .container {
         max-width: 430px;
     }
-
+    .presence-title {
+        font-size: 70px;
+    }
     .location {
         padding: 0 0 50px 0;
     }
@@ -457,9 +459,7 @@
     .date-container {
         transform: translate(-50%, 285px);
     }
-    .main .container::before {
-        top: 603px;
-    }
+   
     .side {
         width: 180px;
         height: 180px;
@@ -536,9 +536,8 @@
     .wishes-text {
         font-size: 22px;
     }
-
-    .organizer-title, .presence-title {
-        font-size: 65px;
+ .presence-title {
+        font-size: 60px;
     }
 
     .organizer-day, .presence-day {
