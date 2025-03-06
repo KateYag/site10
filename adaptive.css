@@ -241,13 +241,24 @@
         height: 30px;
     }
 }
+@media (max-width: 561px) {
+    .wedding-form {
+        button {
+            width: 101%;
+        }
+    }
+}
 
 @media (max-width: 525px) {
 
     .invite-name {
         font-size: 46px;
     }
-
+    .wedding-form {
+        button {
+            width: 102%;
+        }
+    }
     .invite-text {
         font-size: 100px;
     }
@@ -377,7 +388,9 @@
     .program-day {
         font-size: 140px;
     }
-
+    .presence-title {
+        font-size: 65px;
+    }
     .main-your {
         font-size: 140px;
     }
@@ -617,7 +630,11 @@
     .attention-we {
         font-size: 130px;
     }
-
+    .wedding-form {
+        button {
+            width: 103%;
+        }
+    }
 
 }
 
