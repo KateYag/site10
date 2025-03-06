@@ -1,0 +1,767 @@
+@font-face {
+    font-family: "Gogol";
+    src: url("fonts/ofont.ru_Gogol.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Quant Antiqua";
+    src: url("fonts/ofont.ru_Quant Antiqua.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Stolzl";
+    src: url("fonts/ofont.ru_Stolzl.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Caravan";
+    src: url("fonts/Caravan.otf");
+}
+@font-face {
+    font-family: "DolomanPavljenko";
+    src: url("fonts/DolomanPavljenko.otf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poiret One", sans-serif;
+
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #faf1eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    z-index: 1000;
+}
+
+/* Скрытие прелоадера */
+.preloader.hidden-main {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Буквы */
+.letter {
+    font-family: "Book Antiqua", sans-serif;
+
+    font-size: 100px;
+    font-weight: bold;
+    position: absolute;
+    opacity: 0;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes moveIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-600px); /* Начальная позиция для буквы И */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-100px); /* Конечная позиция в центре */
+    }
+}
+.heart-pre {
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.heart-pre img {
+    width: 100px;
+    height: 100px;
+}
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(600px); /* Начальная позиция для буквы А */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(100px); /* Конечная позиция в центре */
+    }
+}
+
+/* Начальное положение букв */
+.letter.i {
+    animation-name: moveIn;
+}
+
+.letter.a {
+    animation-name: moveInRight;
+}
+
+
+
+
+.invite {
+    max-width: 800px;
+    background-image: url("./images/one.jpg");
+    background-size: cover;
+    margin: 0 auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.invite::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+.invite .container {
+    padding: 500px 0 70px;
+    text-align: center;
+}
+
+.invite-date, .invite-text, .invite-name {
+    z-index: 2;
+    color: white;
+    position: relative;
+}
+.invite-date {
+    font-family: "Book Antiqua", sans-serif;
+    font-size: 40px;
+    margin-bottom: -70px;
+
+}
+.invite-text {
+    font-family: "Caravan", sans-serif;
+    font-size: 160px;
+
+}
+.invite-name {
+    font-family: "Book Antiqua", sans-serif;
+    font-size: 100px;
+}
+
+.attention {
+    background-image: url("./images/about-bg.jpg");
+}
+.attention {
+
+}
+.attention .container {
+    padding: 130px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.attention img {
+    width: 330px;
+}
+.attention-info {
+    max-width: 500px;
+
+}
+.attention-title {
+    font-family: "Poiret One", sans-serif;
+    font-size: 77px;
+    line-height: 75%;
+    position: relative;
+    text-align: right;
+    margin-bottom: 20px;
+}
+.attention-we {
+    font-family: "Caravan", sans-serif;
+    font-size: 160px;
+    top: -104px;
+    left: -20px;
+    position: absolute;
+}
+
+.attention-text {
+    font-family: "Book Antiqua", sans-serif;
+    font-size: 21px;
+}
+
+.main {
+    /*background-color: #f8efea;*/
+    position: relative;
+    padding: 130px 0;
+}
+.main .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.main-title {
+    font-family: "Poiret One", sans-serif;
+    font-size: 77px;
+    line-height: 75%;
+    position: relative;
+    margin-bottom: 100px;
+}
+.main-your {
+    font-family: "Caravan", sans-serif;
+    font-size: 160px;
+    top: -8px;
+    right: -170px;
+    color: #d7cfc3;
+    position: absolute;
+}
+.date-container {
+    position: absolute;
+    left: -58px;
+    background-color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 90px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    line-height: 1.3;
+}
+
+
+.main .container::before,
+.main .container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px; /* Толщина линии */
+    background-color: #333; /* Цвет линии */
+}
+
+.main .container::before {
+    left: 0;
+}
+
+.main .container::after {
+    right: 0;
+}
+.calendar {
+    width: 400px;
+    max-width: 100%;
+    margin-bottom: 50px;
+    padding: 20px;
+    text-align: center;
+    display: inline-block;
+    border: 2px solid #333; /* Рамка вокруг календаря */
+    border-radius: 10px; /* Скругление углов */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для объема */
+}
+.calendar .month {
+    font-family: "Caravan", sans-serif;
+    font-weight: normal;
+    font-size: 105px;
+    line-height: 25%;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0px;
+    font-size: 29px;
+    justify-items: center;
+    justify-content: center;
+}
+.day {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+.day.empty {
+    background: transparent;
+}
+.heart {
+    color: #7a0f21;
+    font-size: 46px;
+    position: absolute;
+    bottom: -4px;
+    right: 0px;
+    z-index: -1;
+}
+.heart svg {
+    width: 65px;
+    height: 50px;
+}
+
+
+
+
+
+
+.location {
+    background-image: url("./images/about-bg.jpg");
+    padding: 0 0 100px 0;
+}
+.location .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.location-title {
+    font-family: "Caravan", sans-serif;
+    font-weight: normal;
+    font-size: 160px;
+    margin-bottom: 50px;
+}
+.gallery {
+    display: flex;
+    align-items: center;
+
+}
+
+.side {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+
+}
+
+.center-card {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.center-card img {
+    width: 422px;
+    height: 425px;
+    object-fit: cover;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 10px 0 5px;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+}
+
+
+.location a {
+    font-family: "Book Antiqua", sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+    outline: none;
+    color: white;
+    width: 300px;
+    box-sizing: border-box;
+    background-color: #2D2D35;
+    padding: 20px;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 30px;
+    text-align: center;
+}
+.location a:hover {
+    color: #262626;
+    background-color: white;
+
+}
+
+
+.program {
+    padding: 100px 0;
+}
+
+.program-title {
+    font-family: "Poiret One", sans-serif;
+    font-size: 77px;
+    line-height: 75%;
+    position: relative;
+    margin-bottom: 100px;
+    text-align: center;
+}
+.program-day {
+    font-family: "Caravan", sans-serif;
+    font-size: 160px;
+    top: 24px;
+    right: 291px;
+    color: #d7cfc3;
+    position: absolute;
+    z-index: -1;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    max-width: 528px;
+    margin: auto;
+    position: relative;
+}
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 25%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #000000;
+}
+.time-info a {
+    text-decoration: none;
+    outline: none;
+    color: #595959;
+    display: inline-block;
+    cursor: pointer;
+}
+.time-info a:hover {
+    color: #d4cfcc;
+    display: inline-block;
+    cursor: pointer;
+
+}
+.event {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    align-items: center;
+    grid-template-rows: 164px
+
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+}
+
+.time-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+.description {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.time-info .text {
+    font-size: 16px;
+}
+
+
+
+.icon.second svg, .icon.three svg, .icon.four svg, .icon.first svg  {
+    width: 50px;
+    height: 50px;
+}
+
+
+.dresscode-title {
+    font-family: "Poiret One", sans-serif;
+    font-size: 77px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.dresscode-info-text {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+.dresscode-info-blocks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dresscode-info-block {
+    width: 200px;
+    height: 50px;
+}
+
+.dresscode-info-block.first {
+    background-color: #c1e0f4;
+}
+
+.dresscode-info-block.second {
+    background-color: #e4d0eb;
+}
+
+.dresscode-info-block.third {
+    background-color: #d8c0f2;
+}
+
+.dresscode-info-block.four {
+    background-color: #e9e2d8;
+}
+
+.dresscode-info-block.five {
+    background-color: #dfc3b5;
+}
+
+.dresscode-info-block.six {
+    background-color: #e1d1ba;
+}
+
+.dresscode-info-block.seven {
+    background-color: #9da28e;
+}
+
+
+.wishes {
+    padding: 100px 0;
+}
+
+.wishes-title {
+    font-family: "Poiret One", sans-serif;
+    font-size: 77px;
+    line-height: 75%;
+    position: relative;
+    margin-bottom: 100px;
+    text-align: center;
+}
+.wishes-day {
+    font-family: "Caravan", sans-serif;
+    font-size: 160px;
+    top: 24px;
+    right: 199px;
+    color: #d7cfc3;
+    position: absolute;
+    z-index: -1;
+}
+
+
+
+
+.wishes-text {
+    text-align: center;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+
+
+
+.presence {
+    padding: 100px 0;
+}
+
+.presence-title {
+    font-family: "Poiret One", sans-serif;
+    font-size: 77px;
+    line-height: 75%;
+    position: relative;
+    margin-bottom: 100px;
+    text-align: center;
+}
+.presence-day {
+    font-family: "Caravan", sans-serif;
+    font-size: 160px;
+    top: 24px;
+    right: 270px;
+    color: #d7cfc3;
+    position: absolute;
+    z-index: -1;
+}
+
+
+.presence-text {
+    text-align: center;
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+.des {
+    font-size: 18px;
+}
+
+.wedding-form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 30px;
+    font-family: "Cormorant Infant", sans-serif;
+
+    fieldset {
+        border: none;
+        margin-bottom: 15px;
+    }
+
+    legend {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    label {
+        display: block;
+        margin: 5px 0;
+    }
+
+    input[type="text"],
+    textarea {
+        width: 97%;
+        padding: 8px;
+        border: 1px solid #5c5c5c;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .wedding-form input[type="radio"],
+    .wedding-form input[type="checkbox"],
+    textarea {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    button {
+        -webkit-appearance: none; /* Убирает дефолтные стили в Safari */
+        -moz-appearance: none; /* Для Firefox */
+        appearance: none; /* Общий сброс */
+        width: 100%;
+        padding: 10px;
+        background: #5c5c5c;
+        color: #f8efea;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+
+        &:hover {
+            background: #262626;
+        }
+    }
+}
+@supports (-webkit-appearance: none) {
+    .wedding-form {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 20px;
+        font-size: 30px;
+        font-family: "Cormorant Infant", sans-serif;
+    }
+
+    fieldset {
+        border: none !important;
+        padding: 0;
+    }
+
+    legend {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    label {
+        display: block;
+        margin: 5px 0;
+    }
+
+    input[type="text"],
+    textarea {
+        width: 97%;
+        padding: 8px;
+        border: 1px solid #5c5c5c;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background: #5c5c5c;
+        color: #f8efea;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+
+        &:hover {
+            background: #262626;
+        }
+    }
+}
+
+
+    .timout {
+        padding: 50px 0 50px 0;
+        background-image: url("./images/about-bg.jpg");
+    }
+
+    .timout-title {
+        font-size: 55px;
+        color: #262626;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+        white-space: nowrap;
+    }
+
+    #countdown {
+        display: flex;
+        justify-content: center;
+        gap: 0px;
+    }
+
+    .time-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #8d8987;
+        padding: 15px;
+        text-align: center;
+
+    }
+
+    .time-box span {
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 1;
+    }
+
+    .time-box p {
+        margin: 5px 0 0;
+        font-size: 14px;
+        text-transform: uppercase;
+        opacity: 0.8;
+        font-weight: bold;
+    }
+
+
+
