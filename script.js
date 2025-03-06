@@ -122,11 +122,13 @@ document.querySelector(".wedding-form").addEventListener("submit", async functio
             parse_mode: "HTML",
         }),
     });
-
+    console.log('Response:', response);
     if (response.ok) {
         alert("Форма успешно отправлена!");
         this.reset(); // Очистка формы
     } else {
+        const errorText = await response.text();
+        console.error('Error details:', errorText);
         alert("Ошибка при отправке. Попробуйте еще раз.");
     }
 });
