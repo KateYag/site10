@@ -348,9 +348,8 @@
     }
 
     .invite-date {
-        margin-bottom: -50px;
+        margin-bottom: -30px;
     }
-
     .attention-title {
         font-size: 55px;
     }
@@ -459,7 +458,7 @@
     .date-container {
         transform: translate(-50%, 285px);
     }
-   
+
     .side {
         width: 180px;
         height: 180px;
@@ -635,9 +634,7 @@
         font-size: 60px;
     }
 
-    .invite-date {
-        margin-bottom: -45px;
-    }
+
 
     .invite-date {
         font-size: 25px;
