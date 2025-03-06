@@ -86,8 +86,8 @@ document.querySelector(".wedding-form").addEventListener("submit", async functio
     e.preventDefault(); // Останавливаем стандартную отправку формы
 
     // 🔹 ЗАМЕНИТЬ НА СВОИ ДАННЫЕ!
-    const TOKEN = "7644603205:AAHP68FDVDVowQhLnkeCxdqOR0565Pggtns";
-    const CHAT_ID = "390335723";
+    const TOKEN = "7691880647:AAHWZtllKUaBwjeGTh5Z4WYH9a7XkpPnnlI";
+    const CHAT_ID = "5693808427";
     const API_URL = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
     const fieldNames = {
